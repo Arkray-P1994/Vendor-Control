@@ -8,7 +8,7 @@ import { Link } from "@tanstack/react-router";
 
 export function Navbar() {
   return (
-    <header className="flex h-16 items-center px-4 bg-gray-100 border-b border-gray-200 mb-4">
+    <header className="flex h-16 items-center px-4 bg-gray-100 border-b border-gray-200 ">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>

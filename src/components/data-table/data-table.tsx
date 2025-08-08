@@ -38,8 +38,8 @@ export function DataTable<TData, TValue>({
     React.useState<VisibilityState>({
       category: false,
       msa: false,
-      supplier_evaulation_result: false,
-      supplier_evaulation: false,
+      supplier_evaluation_result: false,
+      supplier_evaluation: false,
       dti_sec: false,
       bir: false,
       business_mayor_peza: false,

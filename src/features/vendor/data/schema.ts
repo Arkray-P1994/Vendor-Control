@@ -15,8 +15,8 @@ export const vendorSchema = z.object({
   category: z.string(),
   products: z.string(),
   msa: z.string(), //attachment
-  supplier_evaulation_result: z.string(), //attachment
-  supplier_evaulation: z.string(), //attachment
+  supplier_evaluation_result: z.string(), //attachment
+  supplier_evaluation: z.string(), //attachment
   dti_sec: z.string(), //attachment
   bir: z.string(), //attachment
   business_mayor_peza: z.string(), //attachment
