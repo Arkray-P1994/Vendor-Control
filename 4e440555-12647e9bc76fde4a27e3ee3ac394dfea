@@ -1,0 +1,10 @@
+import Tasks from "@/features/tasks";
+import { createFileRoute } from "@tanstack/react-router";
+
+export const Route = createFileRoute("/")({
+  component: Index,
+});
+// Homepage
+export default function Index() {
+  return <Tasks />;
+}

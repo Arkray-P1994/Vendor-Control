@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simple AJAX Post</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h2>Create Task</h2>
+    <button id="sendBtn">Send Task</button>
+
+    <script>
+      $("#sendBtn").click(function () {
+        $.ajax({
+          type: "POST",
+          url: "http://192.168.208.5/api-app/api/task/store",
+          data: JSON.stringify({
+            title: "try",
+            task_description: "try",
+          }),
+          contentType: "application/json",
+          dataType: "json",
+          success: function (response) {
+            console.log("Success:", response);
+          },
+          error: function (xhr, status, error) {
+            console.log("Error:", xhr.responseText);
+          },
+        });
+      });
+    </script>
+  </body>
+</html>
