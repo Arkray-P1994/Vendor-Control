@@ -100,7 +100,7 @@ export function VendorCreatePage({
           </Button> */}
 
           <h1 className="text-3xl font-bold">
-            {action === "create" ? "Create New Todo " : "Update Todo"}
+            {action === "create" ? "Add New Vendor " : "Update Vendor"}
           </h1>
           <p className=" mt-2">
             {action === "create"

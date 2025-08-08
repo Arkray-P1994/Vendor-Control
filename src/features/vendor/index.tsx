@@ -18,6 +18,7 @@ import { DataTable } from "../../components/data-table/data-table";
 import { Navbar } from "@/components/layout/nav";
 import { TasksDialogs } from "./components/tasks-dialogs";
 import TasksProvider from "./context";
+import vendors from "./data/vendor";
 
 export default function VendorPage() {
   const { tasks, isLoading } = useTasks();
@@ -54,7 +55,7 @@ export default function VendorPage() {
       {isLoading ? (
         <DataTableSkeleton />
       ) : (
-        <DataTable data={tasks} columns={columns} />
+        <DataTable data={vendors} columns={columns} />
       )}
       <TasksDialogs />
     </TasksProvider>

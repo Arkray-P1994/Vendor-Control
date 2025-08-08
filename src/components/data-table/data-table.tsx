@@ -35,7 +35,22 @@ export function DataTable<TData, TValue>({
 }: DataTableProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = React.useState({});
   const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({});
+    React.useState<VisibilityState>({
+      category: false,
+      msa: false,
+      supplier_evaulation_result: false,
+      supplier_evaulation: false,
+      dti_sec: false,
+      bir: false,
+      business_mayor_peza: false,
+      qms_iso: false,
+      financial_statement: false,
+      others: false,
+      contact_person: false,
+      email: false,
+      phone_number: false,
+      address: false,
+    });
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
   );

@@ -9,7 +9,7 @@ import {
 import { DotsHorizontalIcon } from "@radix-ui/react-icons";
 import { Link } from "@tanstack/react-router";
 import type { Row } from "@tanstack/react-table";
-import { taskSchema } from "../data/schema";
+import { vendorSchema } from "../data/schema";
 
 interface DataTableRowActionsProps<TData> {
   row: Row<TData>;
@@ -18,7 +18,7 @@ interface DataTableRowActionsProps<TData> {
 export function DataTableRowActions<TData>({
   row,
 }: DataTableRowActionsProps<TData>) {
-  const task = taskSchema.parse(row.original);
+  const task = vendorSchema.parse(row.original);
 
   // const { setOpen, setCurrentRow } = useTasks();
 

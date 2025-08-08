@@ -15,7 +15,7 @@ export function Navbar() {
             <NavigationMenuLink asChild>
               <Link
                 href="http://192.168.208.5/picking/index.php"
-                className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:underline underline-offset-4"
+                className="px-3 py-2 text-xs font-medium text-gray-700 hover:text-gray-900 hover:underline underline-offset-4"
                 to={"."}
               >
                 Home
@@ -26,7 +26,7 @@ export function Navbar() {
             <NavigationMenuLink asChild>
               <Link
                 href="http://192.168.208.5/purchasing/purchasing.php"
-                className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:underline underline-offset-4"
+                className="px-3 py-2 text-xs font-medium text-gray-700 hover:text-gray-900 hover:underline underline-offset-4"
                 to={"/"}
               >
                 Purchasing
@@ -37,7 +37,7 @@ export function Navbar() {
             <NavigationMenuLink asChild>
               <Link
                 href="http://192.168.208.5/purchasing/dashboard.php"
-                className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:underline underline-offset-4"
+                className="px-3 py-2 text-xs font-medium text-gray-700 hover:text-gray-900 hover:underline underline-offset-4"
                 to={"."}
               >
                 Dashboard
@@ -48,7 +48,7 @@ export function Navbar() {
             <NavigationMenuLink asChild>
               <Link
                 href="http://192.168.208.5/purchasing/miro.php"
-                className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 hover:underline underline-offset-4"
+                className="px-3 py-2 text-xs  font-medium text-gray-700 hover:text-gray-900 hover:underline underline-offset-4"
                 to={"."}
               >
                 MIRO
@@ -57,7 +57,7 @@ export function Navbar() {
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
-      <div className="ml-2 text-lg font-bold text-gray-900 border-b-2 border-gray-900 pb-1">
+      <div className="ml-2 text-sm font-bold text-gray-900 border-b-2 border-gray-900 pb-1">
         <Link to={"."}>Vendor</Link>
       </div>
     </header>
