@@ -1,5 +1,5 @@
 import { useTasks } from "@/api/task";
-import { TodoCreatePage } from "@/components/input-form";
+import { VendorCreatePage } from "@/components/vendor-form";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/vendor/update/$id")({
@@ -19,5 +19,5 @@ function RouteComponent() {
 
   if (isLoading) return <p>Loading</p>;
   const task = tasks.find((task: { id: number }) => task.id === taskId);
-  return <TodoCreatePage taskData={task} action={"update"} />;
+  return <VendorCreatePage taskData={task} action={"update"} />;
 }

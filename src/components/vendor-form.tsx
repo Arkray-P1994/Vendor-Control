@@ -19,8 +19,9 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useUpdateTask } from "@/features/todolist/actions.ts/update-task";
-import { useAddTask } from "@/features/todolist/actions.ts/upload";
+import { useAddTask } from "@/features/vendor/actions.ts/add-task";
+import { useUpdateTask } from "@/features/vendor/actions.ts/update-task";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useRouter } from "@tanstack/react-router";
 import { ArrowLeft, Pencil, Plus } from "lucide-react";
@@ -46,10 +47,13 @@ export const fetcher = async (url: string, payload?: string) => {
 
 const FormSchema = z.object({
   id: z.number().optional(),
-  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  title: z.string().min(2, { message: "Title must be at least 2 characters." }),
+  task_description: z.string().min(2, {
+    message: "Task description must be at least 2 characters.",
+  }),
 });
 
-export function UploadForm({
+export function VendorCreatePage({
   taskData,
   action,
 }: {
@@ -63,7 +67,8 @@ export function UploadForm({
     resolver: zodResolver(FormSchema),
     defaultValues: {
       id: taskData?.id || 0,
-      name: taskData?.name || "",
+      title: taskData?.title || "",
+      task_description: taskData?.task_description || "",
     },
   });
 
@@ -85,14 +90,14 @@ export function UploadForm({
       <div className="">
         {/* Header */}
         <div className="mb-8">
-          <Button
+          {/* <Button
             variant="ghost"
             onClick={() => router.navigate({ to: "/todolist" })}
             className="mb-4 -ml-4"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back
-          </Button>
+          </Button> */}
 
           <h1 className="text-3xl font-bold">
             {action === "create" ? "Create New Todo " : "Update Todo"}
@@ -135,21 +140,39 @@ export function UploadForm({
               >
                 <FormField
                   control={form.control}
-                  name="name"
+                  name="title"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Name</FormLabel>
+                      <FormLabel>Task Title</FormLabel>
                       <FormControl>
-                        <Input placeholder="Enter task name" {...field} />
+                        <Input placeholder="Enter task title" {...field} />
                       </FormControl>
                       <FormDescription>
-                        Give your task a descriptive name.
+                        Give your task a descriptive title.
                       </FormDescription>
                       <FormMessage />
                     </FormItem>
                   )}
                 />
-
+                <FormField
+                  control={form.control}
+                  name="task_description"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Task Description</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Enter task description"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormDescription>
+                        Provide details about what needs to be done.
+                      </FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
                 <Button
                   type="submit"
                   disabled={

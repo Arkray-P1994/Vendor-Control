@@ -19,7 +19,7 @@ import { Navbar } from "@/components/layout/nav";
 import { TasksDialogs } from "./components/tasks-dialogs";
 import TasksProvider from "./context";
 
-export default function TodoListPage() {
+export default function VendorPage() {
   const { tasks, isLoading } = useTasks();
 
   return (
